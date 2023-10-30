@@ -4,9 +4,14 @@
 <h6>The ultimate bucket list for digital nomads</h6>
 <div class="grid">
     <% destinations.forEach(d => { %>
-        <div class="grid-item"><img src="<%= d.photo %>"><%= d.city %>, <%= d.country %></div>
+        <div class="grid-item">
+            <img src="<%= d.photo %>">
+            <h5 class="grid-title"><%= d.city %>, <%= d.country %></h5>
+        </div>
     <% }) %>
-    <div class="grid-item"><a href="/destinations/new">Add Destination</a></div>
+    <div class="grid-item">
+        <h5><a href="/destinations/new">Add Destination</a></h5>
+    </div>
 </div>
 
 <%- include('../partials/footer') %>
