@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<h2>Add a destination!</h2>
+<form action="POST" method="/destinations">
+    <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" placeholder="Enter city">
+    </div>
+    <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" class="form-control" placeholder="Enter country">
+    </div>
+    <div class="form-group">
+        <label for="photo">Photo</label>
+        <input type="text" class="form-control" placeholder="Enter link to photo">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<%- include('../partials/footer') %>

@@ -1,7 +1,8 @@
 const Destination = require('../models/destination');
 
 module.exports = {
-    index
+    index,
+    new: newDestination
 };
 
 async function index(req, res) {
@@ -16,4 +17,8 @@ async function index(req, res) {
         console.log(error);
         res.send(error);
     }
+}
+
+function newDestination(req, res) {
+    res.render('destinations/new')
 }

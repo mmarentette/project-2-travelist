@@ -1,7 +1,12 @@
 <%- include('../partials/header') %>
-<main>
-    <h1>Travelist</h1>
-    <h6>The ultimate bucket list for digital nomads</h6>
-</main>
+
+<h1>Travelist</h1>
+<h6>The ultimate bucket list for digital nomads</h6>
+<div class="grid">
+    <% destinations.forEach(d => { %>
+        <div class="grid-item"><img src="<%= d.photo %>"><%= d.city %>, <%= d.country %></div>
+    <% }) %>
+    <div class="grid-item"><a href="/destinations/new">Add Destination</a></div>
+</div>
 
 <%- include('../partials/footer') %>

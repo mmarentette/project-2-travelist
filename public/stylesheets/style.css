@@ -63,6 +63,21 @@ body > main {
   margin-bottom: 10px;
 }
 
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
+}
+
+.grid-item {
+  background-color: lavender;
+  width: 25vmin;
+  height: 25vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #search-row form {
   padding-top: 20px;
 }

@@ -5,5 +5,7 @@ const destinationsCtrl = require('../controllers/destinations')
 
 // GET '/destinations'
 router.get('/', destinationsCtrl.index);
+// GET '/destinations/new'
+router.get('/new', destinationsCtrl.new);
 
 module.exports = router;
