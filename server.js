@@ -10,6 +10,7 @@ const passport = require('passport');
 const methodOverride = require('method-override');
 const indexRouter = require('./routes/index');
 const destinationsRouter = require('./routes/destinations');
+const sightsRouter = require('./routes/sights');
 
 
 // create the Express app
@@ -45,7 +46,7 @@ app.use(passport.session());
 
 // Add this middleware BELOW passport middleware
 app.use(function (req, res, next) {
-  res.locals.user = req.user; // assigning a property to res.locals, makes that said property (user) availiable in every
+  res.locals.user = req.user; // assigning a property to res.locals, makes that said property (user) available in every
   // single ejs view
   next();
 });
@@ -53,6 +54,7 @@ app.use(function (req, res, next) {
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
 app.use('/destinations', destinationsRouter);
+app.use('/', sightsRouter);
 
 
 // invalid request, send 404 page
