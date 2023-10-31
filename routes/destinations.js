@@ -9,5 +9,7 @@ router.get('/', destinationsCtrl.index);
 router.get('/new', destinationsCtrl.new);
 // POST '/destinations'
 router.post('/', destinationsCtrl.create);
+// GET '/destinations/:id'
+router.get('/:id', destinationsCtrl.show);
 
 module.exports = router;

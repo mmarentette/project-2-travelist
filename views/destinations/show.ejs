@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<h1><%= destination.city %>, <%= destination.country %></h1>
+<h4>Must-See Sights</h4>
+
+<div class="grid">
+    <% destination.sights.forEach(s => { %>
+    <a class="grid-link" href="/sights/<%= s._id %>">
+        <div class="grid-item">
+            <img src="<%= s.photo %>">
+            <h5 class="grid-title"><%= s.name %></h5>
+        </div>
+    </a>
+    <% }) %>
+    <a class="grid-link" href="/sights/new">
+        <div class="grid-item">
+            <h3>+</h3>
+            <h5>Add Sight</h5>
+        </div>
+    </a>
+</div>
+
+<%- include('../partials/footer') %>

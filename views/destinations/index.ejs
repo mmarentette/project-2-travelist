@@ -4,14 +4,19 @@
 <h6>The ultimate bucket list for digital nomads</h6>
 <div class="grid">
     <% destinations.forEach(d => { %>
+    <a class="grid-link" href="/destinations/<%= d._id %>">
         <div class="grid-item">
             <img src="<%= d.photo %>">
             <h5 class="grid-title"><%= d.city %>, <%= d.country %></h5>
         </div>
+    </a>
     <% }) %>
-    <div class="grid-item">
-        <h5><a href="/destinations/new">Add Destination</a></h5>
-    </div>
+    <a class="grid-link" href="/destinations/new">
+        <div class="grid-item">
+            <h3>+</h3>
+            <h5>Add Destination</h5>
+        </div>
+    </a>
 </div>
 
 <%- include('../partials/footer') %>
