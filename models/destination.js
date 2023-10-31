@@ -7,6 +7,10 @@ const sightSchema = new mongoose.Schema(
         addess: String,
         description: String,
         topActivity: Boolean,
+        userRecommending: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }
     },
     {
         timestamps: true

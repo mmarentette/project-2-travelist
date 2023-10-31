@@ -12,12 +12,14 @@
         </div>
     </a>
     <% }) %>
+    <% if (user) { %>
     <a class="grid-link" href="/destinations/<%= destination._id %>/sights/new">
         <div class="grid-item">
             <h3>+</h3>
             <h5>Add Sight</h5>
         </div>
     </a>
+    <% } %>
 </div>
 
 <%- include('../partials/footer') %>
