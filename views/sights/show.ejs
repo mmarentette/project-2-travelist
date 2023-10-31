@@ -14,14 +14,15 @@
             <% } %>
     </div>
     <div class="sight-grid-item">
-        <p class="sight-comment">Comments 1</p>
-        <p class="sight-comment">Comment 2</p>
-        <p class="sight-comment">Comment 3</p>
-        <p class="sight-comment">Add Comment</p>
-        <form action="/sights/<%= sight._id %>/comments" method="POST">
-            <textarea name="description" class="form-control" class="sight-comment" rows="2" placeholder="Enter new comment"></textarea>
-            <button type="submit" class="btn btn-primary">Add Comment</button>
-        </form>
+        <% sight.comments.forEach(c => { %>
+            <p class="sight-comment"><%= c.content %></p>
+        <% }) %>
+        <% if (user) { %>
+            <form action="/destinations/<%= destination._id %>/sights/<%= sight._id %>/comments" method="POST">
+                <textarea name="content" class="form-control" class="sight-comment" rows="2" placeholder="Enter new comment"></textarea>
+                <button type="submit" class="btn btn-primary">Add Comment</button>
+            </form>
+        <% } %>
     </div>
 </div>
 

@@ -11,7 +11,7 @@ const methodOverride = require('method-override');
 const indexRouter = require('./routes/index');
 const destinationsRouter = require('./routes/destinations');
 const sightsRouter = require('./routes/sights');
-
+const commentsRouter = require('./routes/comments');
 
 // create the Express app
 const app = express();
@@ -53,8 +53,9 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
-app.use('/destinations', destinationsRouter);
+app.use('/', commentsRouter);
 app.use('/', sightsRouter);
+app.use('/destinations', destinationsRouter);
 
 
 // invalid request, send 404 page

@@ -36,7 +36,7 @@ async function show(req, res) {
     try {
         const destinationDoc = await Destination.findById(req.params.destId);
         console.log(destinationDoc, '<---------- destinationDoc');
-        const sight = await destinationDoc.sights.id(req.params.sightId);
+        const sight = destinationDoc.sights.id(req.params.sightId);
         console.log(sight, '<--------- sight');
         res.render('sights/show', {
             destination: destinationDoc,
