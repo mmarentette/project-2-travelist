@@ -18,6 +18,10 @@
         <p class="sight-comment">Comment 2</p>
         <p class="sight-comment">Comment 3</p>
         <p class="sight-comment">Add Comment</p>
+        <form action="/sights/<%= sight._id %>/comments" method="POST">
+            <textarea name="description" class="form-control" class="sight-comment" rows="2" placeholder="Enter new comment"></textarea>
+            <button type="submit" class="btn btn-primary">Add Comment</button>
+        </form>
     </div>
 </div>
 

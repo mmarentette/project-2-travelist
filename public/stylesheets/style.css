@@ -134,6 +134,18 @@ body > main {
   padding-top: 20px;
 }
 
+.btn {
+  background-color: lightblue;
+  color: rgb(62, 58, 58);
+  border: lightblue;
+  margin-top: 2vh;
+}
+
+.btn:hover {
+  background-color: darkblue;
+  color: white;
+}
+
 .student-name {
   position: relative;
   top: -5px;
