@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+<h1><%= sight.name %></h1>
+<h4><%= destination.city %>, <%= destination.country %></h4>
+
+<div class="sight-grid">
+    <div class="sight-grid-item">
+        <img src="<%= sight.photo %>">
+        <p class="sight-grid-text"><%= sight.description %></p>
+        <% if (user && user._id.equals(sight.userRecommending)) { %>
+            <a class="grid-link" href="/destinations/<%= destination._id %>/sights/<%= sight._id %>/edit">
+                <h5 class="sight-grid-text">Edit Sight</h5>
+            </a>
+            <% } %>
+    </div>
+    <div class="sight-grid-item">
+        <p class="sight-comment">Comments 1</p>
+        <p class="sight-comment">Comment 2</p>
+        <p class="sight-comment">Comment 3</p>
+        <p class="sight-comment">Add Comment</p>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

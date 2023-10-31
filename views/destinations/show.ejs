@@ -5,7 +5,7 @@
 
 <div class="grid">
     <% destination.sights.forEach(s => { %>
-    <a class="grid-link" href="destinations/<%= destination._id %>/sights/<%= s._id %>">
+    <a class="grid-link" href="/destinations/<%= destination._id %>/sights/<%= s._id %>">
         <div class="grid-item">
             <img src="<%= s.photo %>">
             <h5 class="grid-title"><%= s.name %></h5>
