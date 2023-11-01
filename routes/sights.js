@@ -9,5 +9,7 @@ router.post('/destinations/:id/', sightsController.create)
 router.get('/destinations/:destId/sights/:sightId', sightsController.show)
 // GET '/destinations/:destId/sights/:sightId/edit'
 router.get('/destinations/:destId/sights/:sightId/edit', sightsController.edit);
+// PUT '/destinations/:destId/sights/:sightId/
+router.put('/destinations/:destId/sights/:sightId/', sightsController.update);
 
 module.exports = router;

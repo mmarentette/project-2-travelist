@@ -5,7 +5,8 @@ module.exports = {
     new: newSight,
     create,
     show,
-    edit
+    edit,
+    update
 }
 
 async function newSight(req, res) {
@@ -58,6 +59,22 @@ async function edit(req, res) {
             destination: destinationDoc,
             sight
         });
+    } catch (error) {
+        console.log(error);
+        res.send(error);
+    }
+}
+
+async function update (req, res) {
+    try {
+        const destinationDoc = await Destination.findById(req.params.destId);
+        const sight = destinationDoc.sights.id(req.params.sightId);
+        sight.name = req.body.name;
+        sight.description = req.body.description;
+        sight.address = req.body.address;
+        sight.photo = req.body.photo;
+        await destinationDoc.save();
+        res.redirect(`/destinations/${destinationDoc._id}/sights/${sight._id}`);
     } catch (error) {
         console.log(error);
         res.send(error);
