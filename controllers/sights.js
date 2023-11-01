@@ -1,9 +1,11 @@
+const destination = require('../models/destination');
 const Destination = require('../models/destination');
 
 module.exports = {
     new: newSight,
     create,
-    show
+    show,
+    edit
 }
 
 async function newSight(req, res) {
@@ -42,6 +44,20 @@ async function show(req, res) {
             destination: destinationDoc,
             sight
         })
+    } catch (error) {
+        console.log(error);
+        res.send(error);
+    }
+}
+
+async function edit(req, res) {
+    try {
+        const destinationDoc = await Destination.findById(req.params.destId);
+        const sight = destinationDoc.sights.id(req.params.sightId);
+        res.render('sights/edit', {
+            destination: destinationDoc,
+            sight
+        });
     } catch (error) {
         console.log(error);
         res.send(error);
