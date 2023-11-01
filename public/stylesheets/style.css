@@ -110,6 +110,7 @@ body > main {
 .sight-grid-item {
   display: flex;
   flex-direction: column;
+  /* margin: 2vh 0; */
 }
 
 .sight-grid-item > img {
@@ -124,26 +125,51 @@ body > main {
   border-radius: 10px;
 }
 
+.comments-title {  
+  background-color: lightblue;
+  border-radius: 10px;
+  padding: 1vh;
+  text-align: center;
+}
+
 .sight-comment {
-  padding: 2vh;
+  margin: 1vh 0;
+  padding: 1vh;
   border: solid lightblue 5px;
   border-radius: 10px;
 }
 
-#search-row form {
-  padding-top: 20px;
+.sight-comment-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-user {
+  margin-right: auto;
+}
+
+.comment-user > img {
+  border-radius: 50%;
+  height: 3vw;
+}
+
+.sight-comment > p {
+  margin: 0.4vh 0 0;
 }
 
 .btn {
   background-color: lightblue;
   color: rgb(62, 58, 58);
   border: lightblue;
-  margin-top: 2vh;
 }
 
 .btn:hover {
   background-color: darkblue;
   color: white;
+}
+
+#search-row form {
+  padding-top: 20px;
 }
 
 .student-name {

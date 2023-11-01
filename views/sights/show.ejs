@@ -9,17 +9,26 @@
         <p class="sight-grid-text"><%= sight.description %></p>
         <% if (user && user._id.equals(sight.userRecommending)) { %>
             <a class="grid-link" href="/destinations/<%= destination._id %>/sights/<%= sight._id %>/edit">
-                <h5 class="sight-grid-text">Edit Sight</h5>
+                <button class="btn btn-primary">Edit Sight</button>
             </a>
             <% } %>
     </div>
     <div class="sight-grid-item">
+        <h4 class="comments-title">Comments</h4>
         <% sight.comments.forEach(c => { %>
-            <p class="sight-comment"><%= c.content %></p>
+            <div class="sight-comment">
+                <div class="sight-comment-header">
+                    <div class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" > <%= c.userName %></div>
+                    <div><%= c.createdAt.toLocaleDateString() %></div>
+                </div>
+                <p><%= c.content %></p>
+            </div>
         <% }) %>
         <% if (user) { %>
             <form action="/destinations/<%= destination._id %>/sights/<%= sight._id %>/comments" method="POST">
+                <br>
                 <textarea name="content" class="form-control" class="sight-comment" rows="2" placeholder="Enter new comment"></textarea>
+                <br>
                 <button type="submit" class="btn btn-primary">Add Comment</button>
             </form>
         <% } %>
