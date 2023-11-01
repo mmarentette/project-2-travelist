@@ -69,10 +69,9 @@ async function update (req, res) {
     try {
         const destinationDoc = await Destination.findById(req.params.destId);
         const sight = destinationDoc.sights.id(req.params.sightId);
-        sight.name = req.body.name;
-        sight.description = req.body.description;
-        sight.address = req.body.address;
-        sight.photo = req.body.photo;
+        // Cool way to update a subdoc without having to individually re-assign all the properties from form:
+        sight.set(req.body);
+        // console.log(sight, '<-------- updated sight');
         await destinationDoc.save();
         res.redirect(`/destinations/${destinationDoc._id}/sights/${sight._id}`);
     } catch (error) {
