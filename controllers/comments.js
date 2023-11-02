@@ -11,7 +11,7 @@ async function create(req, res) {
         const sight = destinationDoc.sights.id(req.params.sightId);
         console.log(req.body, '<-------------- Comment content: req.body');
         const comment = req.body;
-        comment.user = req.user._id;
+        comment.userId = req.user._id;
         comment.userName = req.user.name;
         comment.userAvatar = req.user.avatar;
         sight.comments.push(comment);

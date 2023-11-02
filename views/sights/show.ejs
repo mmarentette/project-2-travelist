@@ -20,9 +20,11 @@
                 <div class="sight-comment-header">
                     <div class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" > <%= c.userName %></div>
                     <div><%= c.createdAt.toLocaleDateString() %></div>
-                    <form action="/destinations/<%= destination._id %>/sights/<%= sight._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
-                        <button class="btn btn-primary" class="delete-comment" type="submit">X</button>
-                    </form>
+                    <% if (user && user._id.equals(c.userId)) { %> 
+                        <form action="/destinations/<%= destination._id %>/sights/<%= sight._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-primary" id="delete-comment" type="submit">X</button>
+                        </form>
+                    <% } %>
                 </div>
                 <p><%= c.content %></p>
             </div>

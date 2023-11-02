@@ -84,7 +84,7 @@ body > main {
 .grid-item > img {
   max-height: 85%;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
 }
 
 .grid-link {
@@ -146,15 +146,19 @@ body > main {
 .sight-comment-header {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .comment-user {
   margin-right: auto;
+  display: flex;
+  align-items: center;
 }
 
 .comment-user > img {
   border-radius: 50%;
   height: 3vw;
+  margin-right: 1vw;
 }
 
 .sight-comment > p {
@@ -170,6 +174,13 @@ body > main {
 .btn:hover {
   background-color: darkblue;
   color: white;
+}
+
+#delete-comment {
+  font-size: 0.6em; 
+  font-weight: bolder;
+  margin-left: 1em;
+  padding: 0.5em 1em;
 }
 
 .student-name {
