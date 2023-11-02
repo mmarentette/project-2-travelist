@@ -1,15 +1,15 @@
 const router = require('express').Router();
-const sightsController = require('../controllers/sights')
+const sightsCtrl = require('../controllers/sights')
 
 // GET '/destinations/:id/sights/new'
-router.get('/destinations/:id/sights/new', sightsController.new);
+router.get('/destinations/:id/sights/new', sightsCtrl.new);
 // POST '/destinations/:id'
-router.post('/destinations/:id/', sightsController.create)
+router.post('/destinations/:id/', sightsCtrl.create)
 // GET '/destinations/:destId/sights/:sightId'
-router.get('/destinations/:destId/sights/:sightId', sightsController.show)
+router.get('/destinations/:destId/sights/:sightId', sightsCtrl.show)
 // GET '/destinations/:destId/sights/:sightId/edit'
-router.get('/destinations/:destId/sights/:sightId/edit', sightsController.edit);
+router.get('/destinations/:destId/sights/:sightId/edit', sightsCtrl.edit);
 // PUT '/destinations/:destId/sights/:sightId/
-router.put('/destinations/:destId/sights/:sightId/', sightsController.update);
+router.put('/destinations/:destId/sights/:sightId/', sightsCtrl.update);
 
 module.exports = router;
