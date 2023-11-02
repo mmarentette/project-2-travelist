@@ -29,7 +29,8 @@ async function create(req, res) {
     // console.log(req.body, '<---------- New Destination form contents');
     try {
         const destinationDoc = await Destination.create(req.body);
-        // console.log(destinationDoc, '<------ destinationDoc');
+        destinationDoc.userId = req.user._id;
+        console.log(destinationDoc, '<------ destinationDoc');
         res.redirect('/destinations');
     } catch (error) {
         console.log(error);

@@ -7,7 +7,7 @@
     <div class="sight-grid-item">
         <img src="<%= sight.photo %>">
         <p class="sight-grid-text"><%= sight.description %></p>
-        <% if (user && user._id.equals(sight.userRecommending)) { %>
+        <% if (user && user._id.equals(sight.userId)) { %>
             <a class="grid-link" href="/destinations/<%= destination._id %>/sights/<%= sight._id %>/edit">
                 <button class="btn btn-primary">Edit Sight</button>
             </a>

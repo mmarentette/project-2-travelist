@@ -25,7 +25,7 @@ async function create(req, res) {
     try {
         const destinationDoc = await Destination.findById(req.params.id);
         sight = req.body;
-        sight.userRecommending = req.user;
+        sight.userId = req.user._id;
         destinationDoc.sights.push(sight);
         await destinationDoc.save();
         res.redirect(`/destinations/${destinationDoc._id}`);

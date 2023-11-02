@@ -28,7 +28,7 @@ const sightSchema = new mongoose.Schema(
         description: String,
         topActivity: Boolean,
         comments: [commentSchema],
-        userRecommending: {
+        userId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User'
         }
@@ -44,7 +44,11 @@ const destinationSchema = new mongoose.Schema(
         country: String,
         photo: String,
         language: [String],
-        sights: [sightSchema]
+        sights: [sightSchema],
+        userId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        },
     },
     {
         timestamps: true
