@@ -1,7 +1,8 @@
 const Destination = require('../models/destination');
 
 module.exports = {
-    create
+    create,
+    delete: deleteComment
 };
 
 async function create(req, res) {
@@ -22,4 +23,15 @@ async function create(req, res) {
     }
 }
 
-// Cable car was a bit scary, but totally worth the view from the top!
+async function deleteComment(req, res) {
+    try {
+        const destinationDoc = await Destination.findById(req.params.destId);
+        const sight = destinationDoc.sights.id(req.params.sightId);
+        sight.comments.remove(req.params.commentId);
+        await destinationDoc.save();
+        res.redirect(`/destinations/${destinationDoc._id}/sights/${sight._id}`);
+    } catch (error) {
+        console.log(error);
+        res.send(error);
+    }
+}

@@ -139,6 +139,10 @@ body > main {
   border-radius: 10px;
 }
 
+.sight-comment:hover {
+  background-color: rgba(207, 231, 235, 0.554);
+}
+
 .sight-comment-header {
   display: flex;
   justify-content: flex-end;
@@ -166,10 +170,6 @@ body > main {
 .btn:hover {
   background-color: darkblue;
   color: white;
-}
-
-#search-row form {
-  padding-top: 20px;
 }
 
 .student-name {
