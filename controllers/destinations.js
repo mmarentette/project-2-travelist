@@ -13,7 +13,7 @@ async function index(req, res) {
         res.render('destinations/index', 
         {
             destinations: destinationDocs
-        })
+        });
     } catch (error) {
         console.log(error);
         res.send(error);
@@ -21,7 +21,7 @@ async function index(req, res) {
 }
 
 function newDestination(req, res) {
-    res.render('destinations/new')
+    res.render('destinations/new');
 }
 
 async function create(req, res) {
@@ -42,7 +42,7 @@ async function show(req, res) {
         res.render('destinations/show', 
         {
             destination: destinationDoc
-        })
+        });
     } catch (error) {
         console.log(error);
         res.send(error);
