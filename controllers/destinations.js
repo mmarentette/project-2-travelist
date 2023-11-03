@@ -28,7 +28,6 @@ async function create(req, res) {
     try {
         const destinationDoc = await Destination.create(req.body);
         destinationDoc.userId = req.user._id;
-        destinationDoc.save();
         res.redirect('/destinations');
     } catch (error) {
         console.log(error);
@@ -39,8 +38,7 @@ async function create(req, res) {
 async function show(req, res) {
     try {
         const destinationDoc = await Destination.findById(req.params.id);
-        res.render('destinations/show', 
-        {
+        res.render('destinations/show', {
             destination: destinationDoc
         });
     } catch (error) {
