@@ -10,8 +10,8 @@ router.post('/destinations/:id/sights', isLoggedIn, sightsCtrl.create);
 // GET '/destinations/:destId/sights/:sightId'
 router.get('/sights/:sightId', sightsCtrl.show);
 // GET '/destinations/:destId/sights/:sightId/edit'
-router.get('/destinations/:destId/sights/:sightId/edit', isLoggedIn, sightsCtrl.edit);
+router.get('/sights/:sightId/edit', isLoggedIn, sightsCtrl.edit);
 // PUT '/destinations/:destId/sights/:sightId/
-router.put('/destinations/:destId/sights/:sightId/', isLoggedIn, sightsCtrl.update);
+router.put('/sights/:sightId', isLoggedIn, sightsCtrl.update);
 
 module.exports = router;

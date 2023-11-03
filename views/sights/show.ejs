@@ -11,7 +11,7 @@
             <p class="sight-grid-text">Address: <%= sight.address %></p>
         <% } %>
         <% if (user && user._id.equals(sight.userId)) { %>
-            <a class="grid-link" href="/destinations/<%= destination._id %>/sights/<%= sight._id %>/edit">
+            <a class="grid-link" href="/sights/<%= sight._id %>/edit">
                 <button class="btn btn-primary">Edit Sight</button>
             </a>
         <% } %>
