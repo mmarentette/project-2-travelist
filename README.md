@@ -7,9 +7,16 @@ Go ahead - add it to your Travelist.
 
 # Screenshots
 
-<img src="https://i.imgur.com/4MvRFy8.png">
+Home page (index of destinations):
+<img src="https://i.imgur.com/zPl3ski.png">
+
+Show page for destination:
 <img src="https://i.imgur.com/ZaD0bj3.png">
+
+Add a sight to a destination:
 <img src="https://i.imgur.com/utA0gSR.png">
+
+Show page for sight, where authorized user can edit sight and/or delete comment(s):
 <img src="https://i.imgur.com/5zPEruN.png">
 
 
