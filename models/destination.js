@@ -26,7 +26,6 @@ const sightSchema = new mongoose.Schema(
         photo: String,
         address: String,
         description: String,
-        topActivity: Boolean,
         comments: [commentSchema],
         userId: {
             type: mongoose.Schema.Types.ObjectId,
