@@ -109,7 +109,6 @@ body > main {
 .sight-grid-item {
   display: flex;
   flex-direction: column;
-  /* margin: 2vh 0; */
 }
 
 .sight-grid-item > img {
