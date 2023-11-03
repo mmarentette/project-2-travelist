@@ -8,7 +8,7 @@ router.get('/destinations/:id/sights/new', isLoggedIn, sightsCtrl.new);
 // POST '/destinations/:id'
 router.post('/destinations/:id/sights', isLoggedIn, sightsCtrl.create);
 // GET '/destinations/:destId/sights/:sightId'
-router.get('/destinations/:destId/sights/:sightId', sightsCtrl.show);
+router.get('/sights/:sightId', sightsCtrl.show);
 // GET '/destinations/:destId/sights/:sightId/edit'
 router.get('/destinations/:destId/sights/:sightId/edit', isLoggedIn, sightsCtrl.edit);
 // PUT '/destinations/:destId/sights/:sightId/
