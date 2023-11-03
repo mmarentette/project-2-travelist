@@ -5,13 +5,13 @@ const isLoggedIn = require('../config/auth');
 
 // GET '/destinations/:id/sights/new'
 router.get('/destinations/:id/sights/new', isLoggedIn, sightsCtrl.new);
-// POST '/destinations/:id'
+// POST '/destinations/:id/sights'
 router.post('/destinations/:id/sights', isLoggedIn, sightsCtrl.create);
-// GET '/destinations/:destId/sights/:sightId'
+// GET '/sights/:sightId'
 router.get('/sights/:sightId', sightsCtrl.show);
-// GET '/destinations/:destId/sights/:sightId/edit'
+// GET '/sights/:sightId/edit'
 router.get('/sights/:sightId/edit', isLoggedIn, sightsCtrl.edit);
-// PUT '/destinations/:destId/sights/:sightId/
+// PUT '/sights/:sightId/
 router.put('/sights/:sightId', isLoggedIn, sightsCtrl.update);
 
 module.exports = router;
