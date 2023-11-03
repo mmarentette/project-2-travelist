@@ -36,6 +36,7 @@ Show page for sight, where authorized user can edit sight and/or delete comment(
 - Mongoose
 - OAuth 2.0
 - Passport.js
+- Cyclic
 - Bootstrap
 
 
