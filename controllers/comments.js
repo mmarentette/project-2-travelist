@@ -8,7 +8,9 @@ module.exports = {
 
 async function create(req, res) {
     try {
-        const destinationDoc = await Destination.findById(req.params.destId);
+        const destinationDoc = await Destination.findOne({
+            'sights._id': req.params.sightId
+        });
         const sight = destinationDoc.sights.id(req.params.sightId);
         const comment = req.body;
         comment.userId = req.user._id;
@@ -16,7 +18,7 @@ async function create(req, res) {
         comment.userAvatar = req.user.avatar;
         sight.comments.push(comment);
         await destinationDoc.save();
-        res.redirect(`/destinations/${destinationDoc._id}/sights/${sight._id}`);
+        res.redirect(`/sights/${sight._id}`);
     } catch (error) {
         console.log(error);
         res.send(error);
@@ -25,12 +27,14 @@ async function create(req, res) {
 
 async function deleteComment(req, res) {
     try {
-        const destinationDoc = await Destination.findById(req.params.destId);
+        const destinationDoc = await Destination.findOne({
+            'sights._id': req.params.sightId
+        });
         const sight = destinationDoc.sights.id(req.params.sightId);
-        if (!sight.comments._id === req.user._id) res.redirect(`/destinations/${destinationDoc._id}/sights/${sight._id}`);
+        if (!sight.comments._id === req.user._id) res.redirect(`/sights/${sight._id}`);
         sight.comments.remove(req.params.commentId);
         await destinationDoc.save();
-        res.redirect(`/destinations/${destinationDoc._id}/sights/${sight._id}`);
+        res.redirect(`/sights/${sight._id}`);
     } catch (error) {
         console.log(error);
         res.send(error);

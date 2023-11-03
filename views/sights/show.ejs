@@ -24,7 +24,7 @@
                     <div class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" > <%= c.userName %></div>
                     <div><%= c.createdAt.toLocaleDateString() %></div>
                     <% if (user && user._id.equals(c.userId)) { %> 
-                        <form action="/destinations/<%= destination._id %>/sights/<%= sight._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
+                        <form action="/sights/<%= sight._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
                             <button class="btn btn-primary" id="delete-comment" type="submit">X</button>
                         </form>
                     <% } %>
@@ -33,7 +33,7 @@
             </div>
         <% }) %>
         <% if (user) { %>
-            <form action="/destinations/<%= destination._id %>/sights/<%= sight._id %>/comments" method="POST">
+            <form action="/sights/<%= sight._id %>/comments" method="POST">
                 <br>
                 <textarea name="content" class="form-control" class="sight-comment" rows="2" placeholder="Enter new comment"></textarea>
                 <br>
