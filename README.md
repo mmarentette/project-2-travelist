@@ -1,35 +1,47 @@
-# passport-boilerplate
+# TRAVELIST
+
+Travelist is a social platform to share and recommend both the places you've been and the places you're keen to explore! Share destinations and must-see sights to help others plan their next romantic getaway, family vacation, or solo adventure. Add comments to weigh in on the best time to visit, how to get that Insta-worthy shot, and invaluable tips to achieve the ultimate travel experience. 
+
+Go ahead - add it to your Travelist.
 
 
-This is your passport boilerplate.
+# Screenshots
 
-## Setup 
+<img src="https://i.imgur.com/4MvRFy8.png">
+<img src="https://i.imgur.com/ZaD0bj3.png">
+<img src="https://i.imgur.com/utA0gSR.png">
+<img src="https://i.imgur.com/5zPEruN.png">
 
-1. Clone the repo
-2. Rename the folder to your Project
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+
+# Technologies Used
+
+### Languages
+- JavaScript
+- EJS
+- CSS
+
+### Database
+- MongoDB
+
+### Libraries & Frameworks
+- Express.js
+- Node.js
+- Mongoose
+- Bootstrap
 
 
-#### Setup your git repo
-0. Setup your `.env` file and add all the things you need! (look at mongoose movies for reference!)
-1. in the project root `git init`
-2. `git add .` to add all the starter code
-3. `git commit -m "setup boilerplate"` 
-4. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-5. copy the remote address
-6. In your terminal add the remote `git remote add origin yourGithubRepo'sAddressGoesHere`
-7. `git pull origin main` If a screen pulls up asking you to do something just press `:q` and then `enter` (thats vim btw :) )
-8. `git push origin main`
+# Getting Started
 
-#### Setup your login (THE APP WON'T WORK until you do, no VIEWS are setup, or the landing route)
+[Click here to visit Travelist](https://long-jade-squid-gown.cyclic.app)
 
-0. Setup your database connection string
-1. Then Setup Your User Model, 
-2. Follow the steps from the lesson plan to get your Google login credentials for your `.env` file (create the file if you haven't), or you can just copy the ones from earlier if you want to reuse them.
-3. Setup the Code in your config passport 
-4. Setup your callback routes in your `routes/index`
-5. Setup a view and test your login!
+[Check out my Trello planning board](https://trello.com/invite/b/q6Nt12J3/ATTIaa5e156a27da049a247216eb83657c198F197BCC/sei-925-project-2-travelist)
 
-#### Make a commit 
 
-```git commit -m "setup up oauth and User Model"```
+# Next Steps
+
+- Allow users to add ratings in their comments, which will be averaged at the top of each `Sight` show page
+- Add `Restaurant` and `Hotel` data resources with the help of Google Places API
+- Allow users to curate their own unique Travelist to keep track of `Destinations`, `Sights` and `Restaurants` on their bucket list
+- Add `topSight` flag in `Destination` and `Sight` show pages, determined by averaging user comment ratings
+- Allow users to add `Destination` and `Sight` photos via file upload in addition to URL
+- Allow users to 'like' `Destinations` and `Sights`

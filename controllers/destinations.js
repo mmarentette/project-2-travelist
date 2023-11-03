@@ -30,6 +30,7 @@ async function create(req, res) {
     try {
         const destinationDoc = await Destination.create(req.body);
         destinationDoc.userId = req.user._id;
+        destinationDoc.save();
         console.log(destinationDoc, '<------ destinationDoc');
         res.redirect('/destinations');
     } catch (error) {
