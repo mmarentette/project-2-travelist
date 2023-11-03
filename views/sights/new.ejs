@@ -2,7 +2,7 @@
 
 <h1><%= destination.city %>, <%= destination.country %></h1>
 <h3>Add a sight!</h3>
-<form action="/destinations/<%= destination._id %>" method="POST">
+<form action="/destinations/<%= destination._id %>/sights" method="POST">
     <div class="form-group">
         <label for="name">Name</label>
         <input type="text" name="name" class="form-control" placeholder="Enter name of landmark">

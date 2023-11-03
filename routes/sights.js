@@ -6,7 +6,7 @@ const isLoggedIn = require('../config/auth');
 // GET '/destinations/:id/sights/new'
 router.get('/destinations/:id/sights/new', isLoggedIn, sightsCtrl.new);
 // POST '/destinations/:id'
-router.post('/destinations/:id/', isLoggedIn, sightsCtrl.create);
+router.post('/destinations/:id/sights', isLoggedIn, sightsCtrl.create);
 // GET '/destinations/:destId/sights/:sightId'
 router.get('/destinations/:destId/sights/:sightId', sightsCtrl.show);
 // GET '/destinations/:destId/sights/:sightId/edit'
