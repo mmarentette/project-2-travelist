@@ -1,15 +1,17 @@
 const router = require('express').Router();
-const sightsCtrl = require('../controllers/sights')
+const sightsCtrl = require('../controllers/sights');
+// Require the auth middleware
+const isLoggedIn = require('../config/auth');
 
 // GET '/destinations/:id/sights/new'
-router.get('/destinations/:id/sights/new', sightsCtrl.new);
+router.get('/destinations/:id/sights/new', isLoggedIn, sightsCtrl.new);
 // POST '/destinations/:id'
-router.post('/destinations/:id/', sightsCtrl.create)
+router.post('/destinations/:id/', isLoggedIn, sightsCtrl.create);
 // GET '/destinations/:destId/sights/:sightId'
-router.get('/destinations/:destId/sights/:sightId', sightsCtrl.show)
+router.get('/destinations/:destId/sights/:sightId', sightsCtrl.show);
 // GET '/destinations/:destId/sights/:sightId/edit'
-router.get('/destinations/:destId/sights/:sightId/edit', sightsCtrl.edit);
+router.get('/destinations/:destId/sights/:sightId/edit', isLoggedIn, sightsCtrl.edit);
 // PUT '/destinations/:destId/sights/:sightId/
-router.put('/destinations/:destId/sights/:sightId/', sightsCtrl.update);
+router.put('/destinations/:destId/sights/:sightId/', isLoggedIn, sightsCtrl.update);
 
 module.exports = router;
