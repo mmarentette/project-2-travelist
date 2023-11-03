@@ -10,7 +10,6 @@ module.exports = {
 async function index(req, res) {
     try {
         const destinationDocs = await Destination.find({});
-        // console.log(destinationDocs, '<----------- destinationDocs');
         res.render('destinations/index', 
         {
             destinations: destinationDocs
@@ -26,12 +25,10 @@ function newDestination(req, res) {
 }
 
 async function create(req, res) {
-    // console.log(req.body, '<---------- New Destination form contents');
     try {
         const destinationDoc = await Destination.create(req.body);
         destinationDoc.userId = req.user._id;
         destinationDoc.save();
-        console.log(destinationDoc, '<------ destinationDoc');
         res.redirect('/destinations');
     } catch (error) {
         console.log(error);
@@ -42,7 +39,6 @@ async function create(req, res) {
 async function show(req, res) {
     try {
         const destinationDoc = await Destination.findById(req.params.id);
-        console.log(destinationDoc, '<--------- destinationDoc');
         res.render('destinations/show', 
         {
             destination: destinationDoc

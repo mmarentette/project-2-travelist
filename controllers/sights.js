@@ -38,9 +38,7 @@ async function create(req, res) {
 async function show(req, res) {
     try {
         const destinationDoc = await Destination.findById(req.params.destId);
-        console.log(destinationDoc, '<---------- destinationDoc');
         const sight = destinationDoc.sights.id(req.params.sightId);
-        console.log(sight, '<--------- sight');
         res.render('sights/show', {
             destination: destinationDoc,
             sight
@@ -69,9 +67,9 @@ async function update (req, res) {
     try {
         const destinationDoc = await Destination.findById(req.params.destId);
         const sight = destinationDoc.sights.id(req.params.sightId);
+        if (!sight.userId.equals(req.user._id)) return res.redirect(`/destinations/${destinationDoc._id}/sights/${sight._id}`);
         // Cool way to update a subdoc without having to individually re-assign all the properties from form:
         sight.set(req.body);
-        // console.log(sight, '<-------- updated sight');
         await destinationDoc.save();
         res.redirect(`/destinations/${destinationDoc._id}/sights/${sight._id}`);
     } catch (error) {
